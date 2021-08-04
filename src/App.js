@@ -55,7 +55,6 @@ function App() {
 	];
 	const options = [];
 	judete.map(foo => options.push({ value: `${foo}`, label: `${foo}` }));
-	console.log(options);
 	const apiKey = process.env.REACT_APP_API_KEY;
 	const apiUrl = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=3&lang=ro`;
 	moment.updateLocale('ro', localization);
@@ -72,12 +71,10 @@ function App() {
 			setApiData(results);
 		};
 		fetchApi();
-	}, [apiUrl]);
-
+	}, [apiUrl, apiKey]);
 	function updateCity(city) {
 		setCity(city['value']);
 	}
-
 	if (apiData['current'] === undefined) {
 		return (
 			<div>
@@ -85,20 +82,6 @@ function App() {
 			</div>
 		);
 	}
-	console.log(apiData);
-
-	const customStyles = {
-		control: (base, state) => ({
-		  ...base,
-		  color: 'white',
-		  background: "transparent",
-		  // Overwrittes the different states of border
-		  borderColor: state.isFocused ? "yellow" : "green",
-		  // Removes weird border around container
-		  
-		})
-	  };
-
 	return (
 		<div className="App min-h-screen text-white flex justify-between">
 			<div className="flex justify-between flex-col">
