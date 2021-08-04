@@ -83,27 +83,28 @@ function App() {
 		);
 	}
 	return (
-		<div className="App min-h-screen text-white flex justify-between">
-			<div className="flex justify-between flex-col">
-				<h1 className="text-4xl	font-bold pt-12 pl-24 text-left">
+		<div className="App min-h-screen text-white flex justify-between flex-col md:flex-row">
+
+			<div className="flex justify-between flex-col backdrop-filter backdrop-blur-xl lg:backdrop-filter-none ">
+				<h1 className="text-3xl lg:text-4xl	font-bold pt-12 pl-6 md:pl-24 text-left">
 					Vremea {city}
 				</h1>
 				<div className="flex flex-row items-center pb-6 text-right pl-6 ">
-					<h1 className="text-8xl font-semibold">
+					<h1 className="text-6xl lg:text-8xl font-semibold">
 						{apiData['current']['temp_c']}°
 					</h1>
 					<div className="flex flex-col text-left ">
-						<h1 className="text-6xl pl-2 backdrop-filter	backdrop-blur-xl">
+						<h1 className="text-3xl  lg:text-6xl pl-2  ">
 							{city}, {apiData['current']['condition']['text']}
 						</h1>
-						<h1 className="text-4xl backdrop-filter	backdrop-blur-xl">
+						<h1 className="text-2xl lg:text-4xl lg:pb-12">
 							{moment().format("HH:mm - ddd, D MMMM 'YY ")}
 						</h1>
 					</div>
 				</div>
 			</div>
 
-			<div className="flex flex-col w-4/12 max-h-screen	 backdrop-filter	backdrop-blur-xl overflow-y-auto">
+			<div className="flex flex-col  lg:w-4/12 md:w-full max-h-screen	 backdrop-filter	backdrop-blur-xl overflow-y-auto ">
 				<div className="flex flex-row justify-between">
 					<h1 className="text-left pl-6 pt-12 pb-2">
 						Selecteaza județul:
