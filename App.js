@@ -105,15 +105,15 @@ function App() {
 				<h1 className="text-4xl	font-bold pt-12 pl-24 text-left">
 					Vremea {city}
 				</h1>
-				<div className="flex flex-row items-center pb-6 text-right pl-6 ">
+				<div className="flex flex-row items-center pb-24 text-right pl-24">
 					<h1 className="text-8xl font-semibold">
 						{apiData['current']['temp_c']}°
 					</h1>
-					<div className="flex flex-col text-left ">
-						<h1 className="text-6xl pl-2 backdrop-filter	backdrop-blur-xl">
+					<div className="flex flex-col text-left">
+						<h1 className="text-6xl pl-2">
 							{city}, {apiData['current']['condition']['text']}
 						</h1>
-						<h1 className="text-4xl backdrop-filter	backdrop-blur-xl">
+						<h1 className="text-4xl">
 							{moment().format("HH:mm - ddd, D MMMM 'YY ")}
 						</h1>
 					</div>
@@ -123,13 +123,12 @@ function App() {
 			<div className="flex flex-col w-4/12 max-h-screen	 backdrop-filter	backdrop-blur-xl overflow-y-auto">
 				<div className="flex flex-row justify-between">
 					<h1 className="text-left pl-6 pt-12 pb-2">
-						Selecteaza județul:
+						Selecteaza orasul:
 					</h1>
 					<Select
 						options={options}
 						onChange={updateCity}
-						classNamePrefix="Select"
-						className="h-32	w-full pt-12 bg-transparent	border-black border-0 rounded-none pr-6 font-semibold	"
+						className="h-32	w-full pt-12 bg-transparent	border-black border-0 rounded-none pr-6 font-semibold selectstyle	"
 					/>
 				</div>
 				{apiData['current'] === undefined ? (
